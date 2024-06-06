@@ -55,6 +55,12 @@
 <body>
     
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+		var swfName = urlParams.get('swf');
+		if (!swfName) {
+			swfName = 'nogame.swf';
+		}
+        
         function onProgress (e) {
             document.querySelector('#line').style.width = e * 100 + '%';
             document.querySelector('#text').textContent = ((e * 100) | 0) + '%';
@@ -68,13 +74,12 @@
                 document.querySelector('#progress').remove();
             }, 1000);
         }
-
     </script>
 
     <div id = 'root'>
         <awayfl-player id = 'flashBlock'
-            runtimebaseurl = '../dist/'
-            src = './Embeded.swf'
+            runtimebaseurl = './dist/'
+            src = swfName
             onprogress = 'onProgress'
             onload = 'onLoad'
 

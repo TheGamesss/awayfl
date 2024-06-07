@@ -20,7 +20,7 @@
 			overflow: hidden;
 			width: 100%;
 			height: 100%;
-			background: no-repeat center/cover url('./fpabg.svg');
+			background-color: black;
 		}
 
 		#splash {
@@ -34,6 +34,7 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
+			background-image: url("example/splash.jpg");
 			visibility: visible;
 			transition: all 0.5s;
 			z-index: 10;
@@ -68,7 +69,7 @@
 		const config = {
 			width: 550,
 			height: 400,
-			splash: 'todo.svg',
+			splash: 'example/splash.jpg',
 		    "progress": {
 		        "direction": "lr",
 		        "back": "#130d02",

@@ -33,7 +33,7 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url("0");
+			background-image: url("");
 			visibility: visible;
 			z-index: 10;
 		}
@@ -63,10 +63,15 @@
 		if (!swfName) {
 			swfName = 'default.swf';
 		}
+		const urlParams = new URLSearchParams(window.location.search);
+		var imageName = urlParams.get('img');
+		if (!imageName) {
+			imageName = 'todo.svg';
+		}
 		const config = {
 			width: 550,
 			height: 400,
-			splash: 'todo.svg',
+			splash: imageName,
 		    "progress": {
 		        "direction": "lr",
 		        "back": "#000000",

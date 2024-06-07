@@ -60,6 +60,12 @@
 <body>
     
     <script>
+	const urlParams = new URLSearchParams(window.location.search);
+		var swfName = urlParams.get('swf');
+		if (!swfName) {
+			swfName = 'default.swf';
+		}
+
         function onProgress (e) {
             document.querySelector('#line').style.width = e * 100 + '%';
             document.querySelector('#text').textContent = ((e * 100) | 0) + '%';
@@ -79,7 +85,7 @@
     <div id = 'root'>
         <awayfl-player id = 'flashBlock'
             runtimebaseurl = './dist/'
-            src = './Embeded.swf'
+            src = 'swfName'
             onprogress = 'onProgress'
             onload = 'onLoad'
 
